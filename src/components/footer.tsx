@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 const LINKS = [
   { name: "GitHub", href: "https://github.com/ElbertePlinio" },
   { name: "X", href: "https://x.com/ElbertePlinio" },
@@ -9,7 +11,15 @@ export function Footer() {
   return (
     <footer className="border-t border-line">
       <div className="mx-auto flex max-w-6xl flex-col gap-6 px-6 py-10 sm:flex-row sm:items-center sm:justify-between">
-        <p className="text-sm text-muted">© 2026 Elberte Plínio</p>
+        <p className="text-sm text-muted">
+          © 2026 Elberte Plínio ·{" "}
+          <Link
+            href="/privacy"
+            className="transition-colors hover:text-foreground"
+          >
+            Privacy
+          </Link>
+        </p>
         <nav className="flex flex-wrap gap-6">
           {LINKS.map((link) => (
             <a
